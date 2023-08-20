@@ -1,0 +1,25 @@
+@import '../../sass/variables';
+
+.container-header{
+    display: flex;
+    flex-direction: row;
+    // background-color: red;
+    width: 70%;
+    margin-inline:auto;
+    justify-content: space-between;
+    border: 1px solid $header-outline;
+    border-radius: .5rem;
+    padding: 2rem;
+    align-items: center;
+
+    .score-counter{
+
+        background-color: #fff;
+        padding: 1rem 2rem;
+        border-radius: .5rem;
+        // width: 8rem;
+
+        h4{color: $score-text; font-size: 1rem;}
+        span{color: $dark-text; font-size: 3rem;}
+    }
+}

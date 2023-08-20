@@ -1,17 +1,18 @@
 import React from 'react'
 import logo from "../../images/logo.svg"
+import './Header.scss';
 
 const Header = ({score}) => {
   return (
-    <div>
-      {/* <div className="logo">
+    <div className='container-header'>
+      <div className="logo">
         <img src={logo} alt="logo" />
       </div>
 
       <div className="score-counter">
         <h4>SCORE</h4>
-        
-      </div> */} <h2>Score:{score}</h2>
+        <span>{score}</span>
+      </div> 
     </div>
   )
 }

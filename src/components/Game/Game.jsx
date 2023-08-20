@@ -51,7 +51,7 @@ const Game = ({ setScore, score, mySelection }) => {
       {playerWin == "loose" && <h2>You Loose</h2>}
       {playerWin == "draw" && <h2>Draw</h2>}
 
-      <Link to="/">Play Again</Link>
+      <Link to="/" onClick={()=> setHouse()}>Play Again</Link>
     </div>
   );
 };
