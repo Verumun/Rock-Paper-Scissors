@@ -1,0 +1,36 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.game{
+    &__house{
+        .icon{
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            border: 24px solid;
+
+            &--paper{
+                @include icon($imagePaper, $paper-gradient);
+                &--winner{
+                    @include bigShadow($paper-gradient)
+                }
+            }
+
+            &--scissors{
+                @include icon($imageScissors, $scissors-gradient);
+                &--winner{
+                    @include bigShadow($scissors-gradient)
+                }
+            }
+
+            &--rock{
+                @include icon($imageRock, $rock-gradient);
+                &--winner{
+                    @include bigShadow($rock-gradient)
+                }
+            }
+        }
+
+        
+    }
+}

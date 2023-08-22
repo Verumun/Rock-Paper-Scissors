@@ -1,0 +1,86 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+
+
+.game{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 10rem;
+    align-items: center;
+    .text{
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    &__player{
+        display: flex;
+        flex-direction: column;
+
+        
+        
+        .icon{
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            border: 24px solid;
+            &--paper{
+                @include icon($imagePaper, $paper-gradient);
+
+                &--winner{
+                    @include bigShadow($paper-gradient)
+                }
+            }
+
+            &--scissors{
+                @include icon($imageScissors, $scissors-gradient);
+                &--winner{
+                    @include bigShadow($scissors-gradient)
+                }
+            }
+
+            &--rock{
+                @include icon($imageRock, $rock-gradient);
+                &--winner{
+                    @include bigShadow($rock-gradient)
+                }
+            }
+        }
+    }
+
+    &__house{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .result__play{
+        display: flex;
+        flex-direction: column;
+        margin-inline: 2rem;
+        margin-top: 2rem;
+        // align-self: center;
+
+        h2{
+            text-transform: uppercase;
+            margin-bottom: .5rem;
+        }
+
+        a{
+            text-decoration: none;
+            background-color: #fff;
+            text-transform: uppercase;
+            color: $dark-text;
+            font-size: 1.2rem;
+            padding: .5rem 2rem;
+            border-radius: .5rem;
+
+            &:hover{
+                color: $rock-gradient;
+                transition: color ease 500ms;
+            }
+        }
+    }
+}

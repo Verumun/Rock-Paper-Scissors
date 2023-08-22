@@ -21,7 +21,7 @@ const Play = ({ setMySelection }) => {
             onClick={setMySelctionFunc}
             className="icon icon--paper"
           >
-            Paper
+            
           </div>
         </Link>
 

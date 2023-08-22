@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import './Game.scss';
+import './House.scss'
 
 const Game = ({ setScore, score, mySelection }) => {
   const [house, setHouse] = useState("");
@@ -39,21 +41,42 @@ const Game = ({ setScore, score, mySelection }) => {
     }
   };
   useEffect(() => {
-    Result();  
+    Result();
   }, [house]);
 
   return (
     <div className="game">
-      my selection: {mySelection} <br />
-      House Selection: {house}
-      <br />
-      Result: {playerWin == "win" && <h2>You Win</h2>}
-      {playerWin == "loose" && <h2>You Loose</h2>}
-      {playerWin == "draw" && <h2>Draw</h2>}
+      <div className="game__player">
+        <h4 className="text">You picked</h4>
+        <div className={`icon icon--${mySelection} ${playerWin=="win" ? `icon icon--${mySelection}--winner` : ''}`} ></div>
+      </div>
 
-      <Link to="/" onClick={()=> setHouse()}>Play Again</Link>
+      {/* Result */}
+      
+      <div className="result__play">
+      {playerWin == "win" && <h2>You Win</h2>}
+       {playerWin == "loose" && <h2>You Loose</h2>}
+      {playerWin == "draw" && <h2>Draw</h2>}
+        <Link to="/" className="play-again" onClick={()=> setHouse()}>Play Again</Link>
+      </div>
+
+
+      {/* HOuse */}
+      <div className="game__house">
+        <h4 className="text">The house picked</h4>
+        <div className={`icon icon--${house} ${playerWin=="loose" ? `icon icon--${house}--winner` : ''}`}></div>
+      </div>
     </div>
   );
 };
+
+// my selection: {mySelection} <br />
+//       House Selection: {house}
+//       <br />
+//       Result: {playerWin == "win" && <h2>You Win</h2>}
+//       {playerWin == "loose" && <h2>You Loose</h2>}
+//       {playerWin == "draw" && <h2>Draw</h2>}
+
+//       
 
 export default Game;

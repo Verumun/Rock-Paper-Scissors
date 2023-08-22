@@ -1,4 +1,5 @@
 @import '../../sass/variables';
+@import '../../sass/mixins';
 .play{
     display: flex;
     flex-direction: column;
@@ -22,34 +23,28 @@
             width: 160px;
             border: 18px solid;
             border-radius: 50%;
-            background-color: #fff;
-            background-repeat: no-repeat;
-            background-position: center;
             position: relative;
-            box-shadow: inset 3px 5px 10px $header-outline;
 
             &:hover{
-                transform: scale(1.3);
-                
+                transform: scale(1.1);
+
                 transition: transform ease 500ms;
             }
             // z-index: 5;
 
             &--paper{
-                background-image: url($imagePaper);
-                border-color: $paper-gradient;
+                
+             @include icon($imagePaper, $paper-gradient);
                 top: 0;
             }
 
             &--scissors{
-                border-color: $scissors-gradient;
-                background-image: url($imageScissors);
+               @include icon($imageScissors, $scissors-gradient);
                 left: 10rem;
             }
 
             &--rock{
-                border-color: $rock-gradient;
-                background-image: url($imageRock);
+                @include icon($imageRock, $rock-gradient);
                 // bottom: ;
                 top: 15rem;
                 // left: 0;
